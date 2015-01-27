@@ -100,19 +100,9 @@ public class SuoDeGua {
 		this.yonggua = yonggua;
 	}
 
-	public String jijieDir(String jijieTigua) {
+	public String pailieAsse() {
 
-		if (jijieTigua.equals("wang") || jijieTigua.equals("xiang")) {
-
-			return "hao";
-
-		}
-
-		else {
-
-			return "huai";
-
-		}
-
+		return this.tigua + "@" + this.biangua + "@" +this.jiejieTigua+"@"+this.kongwang + "@"
+				+ this.wenti;
 	}
 }
