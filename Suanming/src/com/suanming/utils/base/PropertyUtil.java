@@ -3,6 +3,7 @@ package com.suanming.utils.base;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -90,7 +91,7 @@ public class PropertyUtil {
 //		Map<String, String> propMap = new TreeMap<String, String>();
 		InputStream in = PropertyUtil.class.getResourceAsStream("/" + propertyFile);
 		try {
-			prop.load(in);
+			prop.load(new InputStreamReader(in,"utf-8"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
