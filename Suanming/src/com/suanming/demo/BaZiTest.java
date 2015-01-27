@@ -5,7 +5,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import com.suanming.utils.Lunar;
+import com.suanming.utils.bazi.BaziInfo;
+import com.suanming.utils.bazi.Lunar;
 
 public class BaZiTest {
 
@@ -18,53 +19,12 @@ public class BaZiTest {
 	
 	public static void main(String[] args) {
 		// 获取阴历日期
-		String chineseDate = new BaZiTest().getChineseDate(inDate);
+		String chineseDate = new BaziInfo().getChineseDate(inDate);
 		System.out.println(chineseDate);
 		//八字信息
-		String bazi = new BaZiTest().getBaziInfo(inDate,inTime);
+		String bazi = new BaziInfo().getBaziInfo(inDate,inTime);
 		System.out.println(bazi);
 	}
 
-	
-	
-	/**
-	 * 
-	 * @author:vxin
-	 * @time:2015年1月24日下午1:29:07
-	 * @Description: 通过日期获取阴历日期
-	 * @param inDate
-	 *            输入：1990-02-05
-	 * @return :String 返回:一九九零年正月初十
-	 */
-	public String getChineseDate(String inDate) {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		Calendar cal = Calendar.getInstance();
-		try {
-			cal.setTime(dateFormat.parse(inDate));
-		} catch (ParseException e) {
-			return null;
-		}
-		Lunar lunar = new Lunar(cal);
-		return lunar.chineseDatetoString();
-	}
-
-	/**
-	 * 
-	 * @author:vxin
-	 * @time:2015年1月24日下午1:32:41
-	 * @Description: 获取八字信息
-	 * @return :String
-	 */
-	public String getBaziInfo(String inDate,int hour) {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		Calendar cal = Calendar.getInstance();
-		try {
-			cal.setTime(sdf.parse(inDate));
-		} catch (ParseException e) {
-			return null;
-		}
-		Lunar lunar = new Lunar(cal);
-		return lunar.getYearGanZhi(hour);
-	}
 
 }
