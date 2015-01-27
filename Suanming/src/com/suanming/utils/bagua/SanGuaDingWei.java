@@ -74,6 +74,14 @@ public class SanGuaDingWei {
 		this.huguaxia = huguaxia;
 	}
 
+	public PropertyUtil getpU() {
+		return pU;
+	}
+
+	public void setpU(PropertyUtil pU) {
+		this.pU = pU;
+	}
+
 	public String gettigua() {
 		return tigua;
 	}
@@ -90,18 +98,19 @@ public class SanGuaDingWei {
 		this.yonggua = yonggua;
 	}
 
+	PropertyUtil pU = new PropertyUtil();
 
 	public SanGuaDingWei(SuanGuaInfo sInfo) {
 
 		String nianzhi = sInfo.getNianzhi();
-        this.wenti = sInfo.getWenti();
+
 		KongWangCal kCal = new KongWangCal();
 		Ganzhipiyinzhuanhuan gH = new Ganzhipiyinzhuanhuan();
 		int yushu;
-		this.nianshu = Integer.parseInt(PropertyUtil.getValue(nianzhi,
+		this.nianshu = Integer.parseInt(pU.getValue(nianzhi,
 				"nianshu.properties"));
 
-		this.shishu = Integer.parseInt((PropertyUtil.getValue(
+		this.shishu = Integer.parseInt((this.pU.getValue(
 				Integer.toString(sInfo.getshiShu()), "shishu.properties")));
 		this.yueshu = sInfo.getYueshu();
 		this.rishu = sInfo.getYueshu();
@@ -137,14 +146,6 @@ public class SanGuaDingWei {
 
 	}
 
-	/**
-	 * 
-	* @Title: sanGuan
-	* @Description: TODO
-	* @param: @return
-	* @return: SuoDeGua   
-	* @time:2015年1月27日 上午11:54:07
-	 */
 	public SuoDeGua sanGuan() {
 
 		GuaQiPanDuan gPanDuan = new GuaQiPanDuan();
@@ -154,50 +155,50 @@ public class SanGuaDingWei {
 		String huguashangshu;
 		String huguaxiashu;
 
-		this.shanggua = PropertyUtil.getValue(Integer.toString(this.shangguashu),
+		this.shanggua = this.pU.getValue(Integer.toString(this.shangguashu),
 				"shugua.properties");
 
-		this.xiagua = PropertyUtil.getValue(Integer.toString(this.xiaguashu),
+		this.xiagua = this.pU.getValue(Integer.toString(this.xiaguashu),
 				"shugua.properties");
 
-		huguashangshu = PropertyUtil
+		huguashangshu = this.pU
 				.getValue(shanggua, "baguamingshu.properties")
 				.substring(1, 3)
-				.concat(new File(PropertyUtil.getValue(xiagua,
+				.concat(new File(this.pU.getValue(xiagua,
 						"baguamingshu.properties")).toString().substring(0, 1));
-		this.huguashang = PropertyUtil.getValue(huguashangshu,
+		this.huguashang = this.pU.getValue(huguashangshu,
 				"baguashuming.properties");
 
-		huguaxiashu = PropertyUtil
+		huguaxiashu = this.pU
 				.getValue(shanggua, "baguamingshu.properties")
 				.substring(2, 3)
-				.concat(new File(PropertyUtil.getValue(xiagua,
+				.concat(new File(this.pU.getValue(xiagua,
 						"baguamingshu.properties")).toString().substring(0, 2));
-		this.huguaxia = PropertyUtil
+		this.huguaxia = this.pU
 				.getValue(huguaxiashu, "baguashuming.properties");
 
 		if (dongyao <= 3) {
-			this.bianguashu = PropertyUtil.getValue((xiagua),
+			this.bianguashu = this.pU.getValue((xiagua),
 					"baguamingshu.properties");
-			this.bianguaming = PropertyUtil.getValue(bianguashu,
+			this.bianguaming = this.pU.getValue(bianguashu,
 					"baguashuming.properties");
-			this.biangua = PropertyUtil.getValue(
+			this.biangua = this.pU.getValue(
 					bianguaming.trim().concat(Integer.toString(dongyao)),
 					"biangua.properties");
-			this.bianguacheng = PropertyUtil.getValue(biangua,
+			this.bianguacheng = this.pU.getValue(biangua,
 					"baguashuming.properties");
 			this.tigua = this.shanggua;
 			this.yonggua = this.xiagua;
 		}
 
 		else {
-			this.bianguashu = PropertyUtil.getValue((xiagua),
+			this.bianguashu = this.pU.getValue((xiagua),
 					"baguamingshu.properties");
-			this.bianguaming = PropertyUtil.getValue(bianguashu,
+			this.bianguaming = this.pU.getValue(bianguashu,
 					"baguashuming.properties").trim()
 					+ (Integer.toString(dongyao - 3));
-			this.biangua = PropertyUtil.getValue(bianguaming, "biangua.properties");
-			this.bianguacheng = PropertyUtil.getValue(biangua,
+			this.biangua = this.pU.getValue(bianguaming, "biangua.properties");
+			this.bianguacheng = this.pU.getValue(biangua,
 					"baguashuming.properties");
 			this.tigua = this.xiagua;
 			this.yonggua = this.shanggua;
@@ -209,7 +210,7 @@ public class SanGuaDingWei {
 		sDG.setTigua(this.tigua);
 		sDG.setYonggua(this.yonggua);
 		sDG.setKongwang(kwg.doJudg(this.kongwang, this.tigua, this.yonggua));
-		sDG.setJiejieTigua(jijieDir(gPanDuan.doJudg(this.tigua, this.jijie)));
+		sDG.setJiejieTigua(gPanDuan.doJudg(this.tigua, this.jijie));
 		sDG.setWenti(this.wenti);
 
 		return sDG;

@@ -30,13 +30,13 @@ public class PropertyUtil {
 	 * @return Map<String,String> 返回类型
 	 * @throws
 	 */
-	public Map<String, String> getMapByPropertyFile(String propertyFile) {
+	public static Map<String, String> getMapByPropertyFile(String propertyFile) {
 
 		Properties prop = new Properties();
 		Map<String, String> propMap = new TreeMap<String, String>();
-		InputStream in = PropertyUtil.class.getResourceAsStream("/basedata/" + propertyFile);
+		InputStream in = PropertyUtil.class.getResourceAsStream("/" + propertyFile);
 		try {
-			prop.load(in);
+			prop.load(new InputStreamReader(in,"utf-8"));
 			Set<Object> keyset = prop.keySet();
 			for (Object object : keyset) {
 				propMap.put(object.toString(),
@@ -65,7 +65,8 @@ public class PropertyUtil {
 	 * @throws
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public String getKeyByValue(Map<String, String> map, String value) {
+	public static String getKeyByValue(String value,String propertyFile) {
+		Map<String, String> map = getMapByPropertyFile(propertyFile);
 		String valueString = "";
 		Set<Entry<String, String>> entrySet = map.entrySet();
 		for (Iterator iterator = entrySet.iterator(); iterator.hasNext();) {
