@@ -17,7 +17,8 @@ public class SuanGuaInfo {
 	private String rizhi;
 	private String wenti;
 	private String jijie;
-
+    private String pailie;
+	
 	public String getJijie() {
 		return jijie;
 	}
@@ -38,6 +39,7 @@ public class SuanGuaInfo {
 		this.rizhi = rizhi;
 		this.wenti = wenti;
 		this.jijie = jDefine.seasenDefine(yuezhi);
+		
 	}
 
 	public String getNianzhi() {
@@ -96,4 +98,20 @@ public class SuanGuaInfo {
 		this.wenti = wenti;
 	}
 
+	public int getShishu() {
+		return shishu;
+	}
+
+	public void setShishu(int shishu) {
+		this.shishu = shishu;
+	}
+
+	public String getPailie() {
+		return pailie;
+	}
+
+	public void setPailie(String pailie) {
+		this.pailie = pailie;
+	}
+	
 }
