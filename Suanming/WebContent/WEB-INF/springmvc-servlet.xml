@@ -12,13 +12,13 @@
           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
 	<!--  通过读取路径下面的@Controller来转换成bean   -->
-    <context:component-scan base-package="com.springmvc"/>
+    <context:component-scan base-package="com.suanming"/>
     <!-- 启动Spring mvc的注解功能，完成请求和注解POJO的映射 -->
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>   
 	
 	
     <!-- 对模型视图的名称的解析 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-     p:prefix="/WEB-INF/pages/" p:suffix=".html"/>  
+     p:prefix="/WEB-INF/pages/" p:suffix=".jsp"/>  
      
 </beans>
