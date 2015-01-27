@@ -15,7 +15,7 @@ public class BaziInfo {
 	 * @Description: 通过日期获取阴历日期
 	 * @param inDate
 	 *            输入：1990-02-05
-	 * @return :String 返回:一九九零年正月初十
+	 * @return :String 返回:1,10
 	 */
 	public String getChineseDate(String inDate) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
