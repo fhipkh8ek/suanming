@@ -35,5 +35,26 @@ public class BaseUtils {
 		}
 	}
 	
+	/**
+	 * 
+	* @Title: bubbleSort
+	* @Description: 冒泡排序
+	* @param array
+	* @autor:weixin
+	* @time:2015年1月28日 下午3:25:21
+	 */
+	public static Integer[] bubbleSort(Integer[] array) {
+		int temp = 0;
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array.length-i-1; j++) {
+				if (array[j] < array[j+1]) {
+					temp = array[j];
+					array[j] = array[j+1];
+					array[j+1] = temp;
+				}
+			}
+		}
+		return array;
+	}
 
 }
