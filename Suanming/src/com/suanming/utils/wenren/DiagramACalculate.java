@@ -27,16 +27,4 @@ public class DiagramACalculate {
 		
 		return map;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }
