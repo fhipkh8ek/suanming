@@ -2,16 +2,16 @@ package com.suanming.utils.wenren.vo;
 
 public class BaZiShiShenValue {
 
-	private double bijian;
-	private double jiecai;
-	private double shishen;
-	private double shangguan;
-	private double zhengcai;
-	private double piancai;
-	private double zhengguan;
-	private double qisha;
-	private double zhengyin;
-	private double pianyin;
+	private double bijian = 1.0;
+	private double jiecai = 1.0;
+	private double shishen = 1.0;
+	private double shangguan = 1.0;
+	private double zhengcai = 1.0;
+	private double piancai = 1.0;
+	private double zhengguan = 1.0;
+	private double qisha = 1.0;
+	private double zhengyin = 1.0;
+	private double pianyin = 1.0;
 
 	public double getBijian() {
 		return bijian;
@@ -97,6 +97,11 @@ public class BaZiShiShenValue {
 
 		this.bijian++;
 	}
+	
+	public void addbijianT(){
+		
+		this.bijian = this.bijian+2.0;
+	}
 
 	public void multbijian(double mult) {
 
@@ -108,6 +113,11 @@ public class BaZiShiShenValue {
 		this.jiecai++;
 	}
 
+	public void addjiecaiT(){
+		
+		this.jiecai = this.jiecai+2.0;
+	}
+	
 	public void multjiecai(double mult) {
 
 		this.jiecai = this.jiecai * mult;
@@ -118,6 +128,12 @@ public class BaZiShiShenValue {
 		this.jiecai++;
 	}
 
+	public void addshishenT(){
+		
+		this.shishen = this.shishen+2.0;
+		
+	}
+	
 	public void multshishen(double mult) {
 
 		this.shishen = this.shishen * mult;
@@ -128,6 +144,13 @@ public class BaZiShiShenValue {
 		this.shangguan++;
 	}
 
+	
+	public void addshangguanT(){
+		
+		this.shangguan = this.shangguan+2.0;
+		
+	}
+	
 	public void multshangguan(double mult) {
 
 		this.shangguan = this.shangguan * mult;
@@ -138,6 +161,12 @@ public class BaZiShiShenValue {
 		this.zhengcai++;
 	}
 
+	public void addzhengcaiT(){
+		
+		this.zhengcai = this.zhengcai ++;
+		
+	}
+	
 	public void multzhengcai(double mult) {
 
 		this.zhengcai = this.zhengcai * mult;
@@ -148,6 +177,12 @@ public class BaZiShiShenValue {
 		this.piancai++;
 	}
 
+	public void addpiancaiT(){
+		
+		this.piancai = this.piancai+2.0;
+		
+	}
+	
 	public void multpiancai(double mult) {
 
 		this.piancai = this.zhengcai * mult;
@@ -158,6 +193,12 @@ public class BaZiShiShenValue {
 		this.zhengguan++;
 	}
 
+	public void addzhengguanT(){
+		
+		
+		this.zhengguan = this.zhengguan+2.0;
+	}
+	
 	public void multzhengguan(double mult) {
 
 		this.zhengguan = this.zhengguan * mult;
@@ -168,6 +209,13 @@ public class BaZiShiShenValue {
 		this.qisha++;
 	}
 
+	
+	public void addqishaT(){
+		
+		this.qisha = this.qisha+2.0;
+		
+	}
+	
 	public void multqisha(double mult) {
 
 		this.qisha = this.qisha * mult;
@@ -178,6 +226,13 @@ public class BaZiShiShenValue {
 		this.zhengyin++;
 	}
 
+	
+	public void addzhengyinT(){
+		
+		this.zhengyin = this.zhengyin+2.0;
+		
+	}
+	
 	public void multzhengyin(double mult) {
 
 		this.zhengyin = this.zhengyin * mult;
@@ -188,6 +243,13 @@ public class BaZiShiShenValue {
 		this.pianyin++;
 	}
 
+	
+	public void addpianyinT(){
+		
+		this.pianyin = this.pianyin+2.0;
+		
+	}
+	
 	public void multpianyin(double mult) {
 
 		this.pianyin = this.pianyin * mult;
