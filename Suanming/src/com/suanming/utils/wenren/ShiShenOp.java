@@ -53,7 +53,7 @@ public class ShiShenOp {
 
 		for (int j = 0; j < dizhi.length; j++) {
 
-			String shiShen = sDefine.doDefine(dizhi[j] + rigan);
+			String shiShen = sDefine.doDefine(rigan + dizhi[j]);
 
 			if (shiShen.equals("bijian")) {
 
