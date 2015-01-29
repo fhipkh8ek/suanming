@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.suanming.utils.base.BaseUtils;
-import com.suanming.utils.bazi.BaziInfo;
 
 public class Result {
 	
@@ -17,8 +16,8 @@ public class Result {
 	* @time:2015年1月28日 下午3:22:23
 	 */
 	private  String[] get2God(String bzInfo) {
-		//五神分数//
-		Map<String, Double> map = new DiagramACalculate().getTenGodScore(bzInfo);
+		//五神分数//new DiagramACalculate().getTenGodScore(bzInfo);
+		Map<String, Double> map = new HashMap<String, Double>();
 		//2个五行
 		String wxValues = getScore(map);
 		return wxValues.split("@");
@@ -103,23 +102,6 @@ public class Result {
 		String sumNote = "";
 		
 		return outNote+"@"+inNote+"@"+sumNote;
-	}
-	
-	
-	public static void main(String[] args) {
-		
-		BaziInfo baziInfo = new BaziInfo();
-		//八字
-		String wxbz = baziInfo.getBaziInfo("1990-02-05", 3);
-		
-		String lsbz = baziInfo.getBaziInfo("1986-1-12", 1);
-		
-		
-		Result result = new Result();
-		String duanyu = result.getDuanyu(wxbz, lsbz);
-		
-		System.out.println(duanyu);
-		
 	}
 	
 }

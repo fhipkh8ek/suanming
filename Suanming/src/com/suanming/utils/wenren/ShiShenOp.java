@@ -1,5 +1,7 @@
 package com.suanming.utils.wenren;
 
+
+import com.suanming.utils.wenren.ShiShenDefine;
 import com.suanming.utils.wenren.vo.BaZiShiShenValue;
 
 public class ShiShenOp {
@@ -52,7 +54,7 @@ public class ShiShenOp {
 
 		for (int j = 0; j < dizhi.length; j++) {
 
-			String shiShen = sDefine.doDefine(rigan+dizhi[j]);
+			String shiShen = sDefine.doDefine(dizhi[j] + rigan);
 
 			if (shiShen.equals("bijian")) {
 
