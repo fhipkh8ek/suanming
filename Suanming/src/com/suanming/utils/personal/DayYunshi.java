@@ -128,25 +128,19 @@ public class DayYunshi {
 		return new BaziInfo().getBaziInfo(inDate, hour);
 	}
 	
-	
-	public static void main(String[] args) {
-		//出生日期
-		String inDate = "1990-02-05";
-		//出生时辰
-		Integer inHour = 3;
-		
-		//八字信息
-		System.out.println(new DayYunshi().getBaziInfo(inDate, inHour));
-		//幸运色
-		System.out.println(new DayYunshi().getColor(inDate));
-		//适宜、忌
-		System.out.println(new DayYunshi().getGoodAndBad());
-		//幸运数字(不变)
-		System.out.println(new DayYunshi().getNum(inDate));
-		//吉凶时辰
-		System.out.println(new DayYunshi().getJiAndXiong());
-		
-		
+	/**
+	 * 
+	* @Title: fangXiang
+	* @Description: 返回吉方向
+	* @autor:weixin
+	* @time:2015年1月29日 下午5:39:56
+	 */
+	public String  getFangXiang() {
+		//当前的日柱地支
+		BaziInfo baziInfo = new BaziInfo();
+		String dayZhi = baziInfo.getBaziInfo(BaseUtils.getNowTime(2), 1).substring(5,6);
+		String chonghe = BaseUtils.getChongHe(dayZhi);
+		return BaseUtils.getFangXiang(chonghe.split("@")[0]);
 	}
 	
 }
