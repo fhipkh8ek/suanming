@@ -107,4 +107,32 @@ public class BaseUtils {
 			return "寅@巳";
 		}
 	}
+	
+	/**
+	 * 
+	* @Title: getFangXiang
+	* @Description: 返回方向
+	* @param dizhi
+	* @autor:weixin
+	* @time:2015年1月29日 下午5:35:48
+	 */
+	public static String getFangXiang(String dizhi) {
+		if (dizhi.equals("子")) {
+			return "北";
+		} else if (dizhi.equals("丑")||dizhi.equals("寅")) {
+			return "东北";
+		}else if (dizhi.equals("卯")) {
+			return "东方";
+		}else if (dizhi.equals("辰")||dizhi.equals("巳")) {
+			return "东南";
+		}else if (dizhi.equals("午")) {
+			return "南";
+		}else if (dizhi.equals("未")||dizhi.equals("酉")) {
+			return "西南";
+		}else if (dizhi.equals("酉")) {
+			return "西";
+		}else {
+			return "西北";
+		}
+	}
 }
