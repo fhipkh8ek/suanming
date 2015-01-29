@@ -9,9 +9,9 @@ public class WenRen {
 		
 		BaziInfo baziInfo = new BaziInfo();
 		//八字
-		String wxbz = baziInfo.getBaziInfo("1990-03-05", 3);
+		String wxbz = baziInfo.getBaziInfo("1988-1-7",4);
 		
-		String lsbz = baziInfo.getBaziInfo("1986-1-11", 1);
+		String lsbz = baziInfo.getBaziInfo("1991-8-31", 8);
 		
 		
 		Result result = new Result();
