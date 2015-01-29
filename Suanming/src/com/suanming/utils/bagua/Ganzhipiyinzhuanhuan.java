@@ -7,6 +7,7 @@ package com.suanming.utils.bagua;
  * @author liusen
  * 
  */
+
 public class Ganzhipiyinzhuanhuan {
 
 	public int hanziToPinYin(String hanzi) {
