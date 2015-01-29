@@ -1,12 +1,8 @@
 package com.suanming.demo;
 
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 import com.suanming.utils.bazi.BaziInfo;
-import com.suanming.utils.bazi.Lunar;
 
 public class BaZiTest {
 

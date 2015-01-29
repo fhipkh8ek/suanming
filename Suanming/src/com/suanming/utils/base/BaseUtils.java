@@ -79,4 +79,32 @@ public class BaseUtils {
 		return array;
 	}
 
+	//合、冲
+	public static String getChongHe(String dizhi) {
+		if (dizhi.equals("子")) {
+			return "丑@午";
+		}else if (dizhi.equals("丑")) {
+			return "子@未";
+		}else if (dizhi.equals("寅")) {
+			return "亥@申";
+		}else if (dizhi.equals("卯")) {
+			return "戌@酉";
+		}else if (dizhi.equals("辰")) {
+			return "酉@戌"; 
+		}else if (dizhi.equals("巳")) {
+			return "申@亥";
+		}else if (dizhi.equals("午")) {
+			return "未@子";
+		}else if (dizhi.equals("未")) {
+			return "午@丑";
+		}else if (dizhi.equals("申")) {
+			return "巳@寅";
+		}else if (dizhi.equals("酉")) {
+			return "辰@卯";
+		}else if (dizhi.equals("戌")) {
+			return "卯@辰";
+		}else {
+			return "寅@巳";
+		}
+	}
 }
