@@ -2,7 +2,7 @@ package com.suanming.utils.wenren;
 
 import com.suanming.utils.base.PropertyUtil;
 import com.suanming.utils.wenren.vo.BaZiShiShenValue;
-import com.suanming.utils.wenren.vo.ShiShenOp;
+import com.suanming.utils.wenren.ShiShenOp;
 
 public class ShiShenDefineAndCal {
 
