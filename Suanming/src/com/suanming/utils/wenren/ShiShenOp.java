@@ -1,7 +1,6 @@
 package com.suanming.utils.wenren;
 
 
-import com.suanming.utils.wenren.ShiShenDefine;
 import com.suanming.utils.wenren.vo.BaZiShiShenValue;
 
 public class ShiShenOp {

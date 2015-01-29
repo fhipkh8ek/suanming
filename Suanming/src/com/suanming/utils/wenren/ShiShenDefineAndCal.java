@@ -20,8 +20,8 @@ public class ShiShenDefineAndCal {
 		String shiGan = PropertyUtil.getValue(bzInfo.substring(6, 7), "tianganPinyin.properties");
 		String shiZhi = PropertyUtil.getValue(bzInfo.substring(7, 8), "dizhiPinyin.properties");
 
-		String[] gan = new String[2];
-		String[] zhi = new String[2];
+		String[] gan = new String[3];
+		String[] zhi = new String[3];
 
 		gan[0] = nianGan;
 		gan[1] = yueGan;
