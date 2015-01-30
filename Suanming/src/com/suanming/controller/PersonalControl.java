@@ -8,8 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.suanming.dao.personal.pojo.User;
-import com.suanming.service.IUserService;
 import com.suanming.utils.personal.DayYunshi;
 
 @Controller
