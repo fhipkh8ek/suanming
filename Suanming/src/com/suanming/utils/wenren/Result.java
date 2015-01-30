@@ -104,10 +104,4 @@ public class Result {
 		
 		return outNote+"@"+inNote+"@"+sumNote;
 	}
-	
-	
-	public static void main(String[] args) {
-		
-	}
-	
 }
