@@ -1,12 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" src="/Suanming/js/jquery-1.7.2.min.js"></script>
-<title>登录</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<form action="index.htm" method="post">
+	<form action="pinfo.htm" method="post">
 		输入年月日：<input type="text" value="" name="inDate"><br>
 		出生时间：
 		<select name="inHour">
