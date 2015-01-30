@@ -7,6 +7,7 @@ import java.util.List;
 import com.suanming.utils.base.BaseUtils;
 import com.suanming.utils.base.PropertyUtil;
 import com.suanming.utils.bazi.BaziInfo;
+import com.suanming.utils.personal.pojo.PersonalYun;
 
 public class DayYunshi {
 
@@ -16,8 +17,6 @@ public class DayYunshi {
 	//适宜、忌
 	private static final String[] GANDB = {"开业","安葬","安床","求子","祈福","开光","祭祀"
 		,"相亲","出行","约会","装修","搬家","置业","结婚","求财","交易","合伙"};
-	
-	
 	
 	/**
 	 * 
@@ -143,4 +142,31 @@ public class DayYunshi {
 		return BaseUtils.getFangXiang(chonghe.split("@")[0]);
 	}
 	
+	/**
+	 * 
+	* @Title: getPersonalYun
+	* @Description: 获取个人运势
+	* @param inDate
+	* @param inHour
+	* @autor:weixin
+	* @time:2015年1月30日 上午9:19:05
+	 */
+	public PersonalYun getPersonalYun(String inDate,Integer inHour) {
+		PersonalYun personalYun = new PersonalYun();
+		personalYun.setGoodTime(getJiAndXiong().split("@")[0]);
+		personalYun.setBadTime(getJiAndXiong().split("@")[1]);
+		personalYun.setColor(getColor(inDate));
+		personalYun.setDirection(getFangXiang());
+		personalYun.setIsGood(getGoodAndBad().split("@")[0]);
+		personalYun.setIsBad(getGoodAndBad().split("@")[1]);
+		personalYun.setChineseTime(new BaziInfo().getBaziInfo(inDate, inHour));
+		return personalYun;
+	}
+	
+	public static void main(String[] args) {
+		//当前的日柱地支
+		BaziInfo baziInfo = new BaziInfo();
+		String dayZhi = baziInfo.getBaziInfo(BaseUtils.getNowTime(2), 1);
+		System.out.println(dayZhi);
+	}
 }
