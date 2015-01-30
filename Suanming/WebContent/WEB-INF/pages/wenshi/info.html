@@ -1,0 +1,21 @@
+<#global ctx=request.contextPath>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	评价:${matter.assess}<br/>
+	吉时:${matter.goodTime}<br/>
+	凶时:${matter.badTime}<br/>
+	吉方:${matter.goodDirect}<br/>
+	凶方:${matter.badDirect}<br/>
+	贵人:${matter.goodGuy}<br/>
+	小人:${matter.badGuy}<br/>
+	<span style="color: red;">
+		${matter.other}
+	</span>
+	<a href="${ctx}/index.htm">返回首页</a>
+</body>
+</html>

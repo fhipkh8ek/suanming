@@ -1,0 +1,18 @@
+<#global ctx=request.contextPath>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>个人运势页面</title>
+</head>
+<body>
+	您的八字：${person.chineseTime}<br>
+	今日吉时:${person.goodTime}<br>
+	今日凶时:${person.badTime}<br>
+	今日宜:${person.isGood}<br>
+	今日忌：${person.isBad}<br>
+	幸运颜色:${person.color}<br>
+	幸运方向:${person.direction}
+	<a href="${ctx}/index.htm">返回首页</a>
+</body>
+</html>
