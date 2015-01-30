@@ -13,9 +13,29 @@ public class Matter {
 	private String goodGuy = "";
 	//小人
 	private String badGuy  = "";
+	//吉方向
+	private String goodDirect = "";
+	//凶方向
+	private String badDirect = "";
 	//其他
 	private String other = "";
 	
+	public String getGoodDirect() {
+		return goodDirect;
+	}
+
+	public void setGoodDirect(String goodDirect) {
+		this.goodDirect = goodDirect;
+	}
+
+	public String getBadDirect() {
+		return badDirect;
+	}
+
+	public void setBadDirect(String badDirect) {
+		this.badDirect = badDirect;
+	}
+
 	public String getOther() {
 		return other;
 	}
