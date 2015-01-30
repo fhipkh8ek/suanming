@@ -38,7 +38,7 @@ public class Suan {
 			String xiongfang = result[4];
 			String jishi = result[5];
 			String xiongshi = result[6];
-
+//
 			System.out.println("结论:" + jielun);
 			System.out.println("贵人:" + guiren);
 			System.out.println("小人:" + xiaoren);
