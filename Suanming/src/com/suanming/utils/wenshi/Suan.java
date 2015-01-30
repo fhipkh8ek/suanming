@@ -28,8 +28,9 @@ public class Suan {
 
 		else {
 
-			String[] result = new String [7];
-			result = PropertyUtil.getValue(pailie, "wenshi.properties").split("@");
+			String[] result = new String[7];
+			result = PropertyUtil.getValue(pailie, "wenshi.properties").split(
+					"@");
 			String jielun = result[0];
 			String guiren = result[1];
 			String xiaoren = result[2];
@@ -38,9 +39,6 @@ public class Suan {
 			String jishi = result[5];
 			String xiongshi = result[6];
 
-			
-			
-			
 			System.out.println("结论:" + jielun);
 			System.out.println("贵人:" + guiren);
 			System.out.println("小人:" + xiaoren);
