@@ -16,9 +16,6 @@ import com.suanming.utils.personal.DayYunshi;
 @RequestMapping("person")
 public class PersonalControl {
 	
-	@Autowired
-	private IUserService userService;
-	
 	@RequestMapping("perDay.htm")
 	public String getDayYunshi(HttpServletRequest request,Model model) {
 		String inDate = (String) request.getSession().getAttribute("inDate");
