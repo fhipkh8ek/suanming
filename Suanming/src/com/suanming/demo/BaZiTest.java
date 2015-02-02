@@ -13,6 +13,7 @@ public class BaZiTest {
 	private static int inTime = 3;
 	
 	
+	
 	public static void main(String[] args) {
 		// 获取阴历日期
 		String chineseDate = new BaziInfo().getChineseDate(inDate);
