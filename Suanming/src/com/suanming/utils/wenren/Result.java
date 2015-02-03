@@ -105,9 +105,7 @@ public class Result {
 		
 		//属性文件
 		String fir = PropertyUtil.getValue(outNote+"@"+inNote, "suanren.properties");
-		System.out.println(fir);
 		
-		
-		return outNote+"@"+inNote+"@";
+		return fir;
 	}
 }
