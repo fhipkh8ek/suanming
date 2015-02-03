@@ -92,7 +92,7 @@ public class Result {
 	* @autor:weixin
 	* @time:2015年1月28日 下午4:21:44
 	 */
-	public String getDuanyu(String first,String second) {
+	public String getDuanyu(String first,String second,String type) {
 		String[] firstWx = get2God(first);
 		String[] SecondWx = get2God(second);
 		
@@ -101,11 +101,11 @@ public class Result {
 		//里断语
 		String inNote = firstWx[1] +"@"+ SecondWx[1];
 		//总结
-		String sumNote = "";
+		String sumNote = PropertyUtil.getValue(outNote+"@"+type, "suanren.properties");
 		
 		//属性文件
 		String fir = PropertyUtil.getValue(outNote+"@"+inNote, "suanren.properties");
 		
-		return fir;
+		return fir+"@"+sumNote;
 	}
 }
