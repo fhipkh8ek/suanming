@@ -3,47 +3,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>问人</title>
-<link href="/Suanming/css/jquery.datetimepicker.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="/Suanming/js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="/Suanming/js/jquery.datetimepicker.js"></script>
+<title>Insert title here</title>
 </head>
 <body>
-	<form action="${ctx}/wenren/suan.htm" method="post">
-		请输入他/她的出生日期：<input type="text" id="inDate2" name="inDate2" />
-		出生时间:
-		<select name="inHour2">
-			<option value="">不知道</option>
-			<option value="1">23:00-00:59</option>
-			<option value="2">01:00-02:59</option>
-			<option value="3">03:00-04:59</option>
-			<option value="4">05:00-06:59</option>
-			<option value="5">07:00-08:59</option>
-			<option value="6">09:00-10:59</option>
-			<option value="7">11:00-12:59</option>
-			<option value="8">13:00-14:59</option>
-			<option value="9">15:00-16:59</option>
-			<option value="10">17:00-18:59</option>
-			<option value="11">19:00-20:59</option>
-			<option value="12">21:00-22:59</option>
-		</select>
-		<input type="submit" id="subtn" value="提交"/>
-	</form>
 </body>
-<script type="text/javascript">
-	$(document).ready(function(){
-		$("#subtn").click(function(){
-			var inDate = $("#inDate2").val();
-			if(inDate == "" || inDate==null){
-				alert("不能为空值");	
-				return false;
-			}			
-		});
-	});
-	$('#inDate2').datetimepicker({		
-		timepicker:false,
-		lang:'ch',
-		format:'Y-m-d',
-	});
-</script>
 </html>
