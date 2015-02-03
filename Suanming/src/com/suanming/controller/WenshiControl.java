@@ -23,7 +23,7 @@ public class WenshiControl {
 		model.addAttribute("matter", matter);
 		return "wenshi/info";
 	}
-	
+
 	@RequestMapping("index.htm")
 	public String index() {
 		return "wenshi/index";
