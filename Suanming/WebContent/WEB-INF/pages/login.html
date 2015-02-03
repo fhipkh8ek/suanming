@@ -2,12 +2,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="/Suanming/css/jquery.datetimepicker.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="/Suanming/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/Suanming/js/jquery.datetimepicker.js"></script>
 <title>登录</title>
 </head>
 <body>
 	<form action="index.htm" method="post">
-		输入出生年月日(yyyy-MM-dd格式)：<input type="text" value="" name="inDate"><br>
+		输入出生年月日(yyyy-MM-dd格式)：<input type="text" value="" id="inDate" name="inDate"><br>
 		出生时间：
 		<select name="inHour">
 			<option value="1">23:00-00:59</option>
@@ -23,7 +25,23 @@
 			<option value="11">19:00-20:59</option>
 			<option value="12">21:00-22:59</option>
 		</select>
-		<input type="submit" value="提交">
+		<input type="submit" id="subtn" value="提交">
 	</form>
 </body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#subtn").click(function(){
+			var inDate = $("#inDate").val();
+			if(inDate == "" || inDate==null){
+				alert("不能为空值");	
+				return false;
+			}			
+		});
+	});
+	$('#inDate').datetimepicker({		
+		timepicker:false,
+		lang:'ch',
+		format:'Y-m-d',
+	});
+</script>
 </html>
