@@ -1,0 +1,32 @@
+<#global ctx=request.contextPath>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="/Suanming/js/jquery-1.7.2.min.js"></script>
+<title>意见</title>
+</head>
+<body>
+	<form action="${ctx}/idea/yijian.htm" method="post">
+		模块名字：<select name="modelName">
+			<option value="算关系">算关系</option>
+			<option value="问事">问事</option>
+			<option value="每日运势">每日运势</option>
+		</select><br>
+		意见内容:<textarea rows="10" cols="50" id="content" name="content">
+		</textarea>
+		<input type="submit" id="sub" value="提交">
+	</form>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#sub").click(function(){
+			var content = $("#content").text();
+			if(content == "" || content == null){					
+				alert("内容不能为空");
+				return false;
+			}
+		});
+	});
+</script>
+</html>
