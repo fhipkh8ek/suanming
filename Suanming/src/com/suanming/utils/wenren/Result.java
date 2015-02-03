@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.suanming.utils.base.BaseUtils;
-import com.suanming.utils.base.PropertyUtil;
 import com.suanming.utils.bazi.BaziInfo;
 
 public class Result {
@@ -97,17 +96,12 @@ public class Result {
 		String[] SecondWx = get2God(second);
 		
 		//表断语
-		String outNote = firstWx[0] + "@" + SecondWx[0];
+		String outNote = firstWx[0] + SecondWx[0];
 		//里断语
-		String inNote = firstWx[1] +"@"+ SecondWx[1];
+		String inNote = firstWx[1] + SecondWx[1];
 		//总结
 		String sumNote = "";
 		
-		//属性文件
-		String fir = PropertyUtil.getValue(outNote+"@"+inNote, "suanren.properties");
-		System.out.println(fir);
-		
-		
-		return outNote+"@"+inNote+"@";
+		return outNote+"@"+inNote+"@"+sumNote;
 	}
 }
