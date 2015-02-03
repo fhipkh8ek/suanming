@@ -23,6 +23,9 @@ public class WenrenController {
 		
 		String inDate2 = request.getParameter("inDate2");
 		String inHour2String = request.getParameter("inHour2");
+		
+		String type = request.getParameter("type");
+		
 		if (StringUtils.isBlank(inHour2String)) {
 			inHour2String = "1";
 		}
@@ -35,9 +38,11 @@ public class WenrenController {
 		String secbz = baziInfo.getBaziInfo(inDate2,inHour2);
 		
 		Result result = new Result();
-		String duanyu = result.getDuanyu(firbz, secbz);
+		String duanyu = result.getDuanyu(firbz, secbz,type);
 		
-		model.addAttribute("duanyu", duanyu);
+		model.addAttribute("xingge", duanyu.split("@")[0]);
+		model.addAttribute("zongjia", duanyu.split("@")[1]);
+		
 		
 		return "wenren/info";
 	}
