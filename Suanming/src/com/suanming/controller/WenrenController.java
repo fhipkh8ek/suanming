@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import sun.launcher.resources.launcher;
 
 import com.suanming.utils.bazi.BaziInfo;
 import com.suanming.utils.wenren.Result;
