@@ -13,32 +13,32 @@ public class ShiShenOp {
 
 		for (int i = 0; i < tiangan.length; i++) {
 
-			String shiShen = sDefine.doDefine(rigan+tiangan[i]);
+			String shiShen = sDefine.doDefine(rigan + tiangan[i]);
 
 			if (shiShen.equals("bijian")) {
 				bsv.multbijian(vDefine.doDefine(tiangan[i] + yuezhi));
-				bsv.addbijianG();
+
 			} else if (shiShen.equals("jiecai")) {
 				bsv.multjiecai(vDefine.doDefine(tiangan[i] + yuezhi));
-				bsv.addjiecaiG();
+
 			} else if (shiShen.equals("zhengcai")) {
 				bsv.multzhengcai(vDefine.doDefine(tiangan[i] + yuezhi));
-				bsv.addzhengcaiG();
+
 			} else if (shiShen.equals("piancai")) {
 				bsv.multpiancai(vDefine.doDefine(tiangan[i] + yuezhi));
-				bsv.addpiancaiG();
+
 			} else if (shiShen.equals("zhengguan")) {
 				bsv.multzhengguan(vDefine.doDefine(tiangan[i] + yuezhi));
-				bsv.addzhengguanG();
+
 			} else if (shiShen.equals("qisha")) {
 				bsv.multqisha(vDefine.doDefine(tiangan[i] + yuezhi));
-				bsv.addqishaG();
+
 			} else if (shiShen.equals("zhengyin")) {
 				bsv.multzhengyin(vDefine.doDefine(tiangan[i] + yuezhi));
-				bsv.addzhengyinG();
+
 			} else if (shiShen.equals("pianyin")) {
 				bsv.multpianyin(vDefine.doDefine(tiangan[i] + yuezhi));
-				bsv.addpianyinG();
+
 			}
 		}
 		for (int j = 0; j < dizhi.length; j++) {
@@ -121,7 +121,6 @@ public class ShiShenOp {
 			bsv.addpianyinT();
 			break;
 
-			
 		default:
 			break;
 		}
