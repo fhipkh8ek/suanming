@@ -97,10 +97,10 @@ public class BaZiShiShenValue {
 
 		this.bijian++;
 	}
-
-	public void addbijianT() {
-
-		this.bijian = this.bijian + 2.0;
+	
+	public void addbijianT(){
+		
+		this.bijian = this.bijian+2.0;
 	}
 
 	public void multbijian(double mult) {
@@ -108,31 +108,19 @@ public class BaZiShiShenValue {
 		this.bijian = this.bijian * mult;
 	}
 
-	public void addbijianG() {
-
-		this.bijian = this.bijian + 0.5;
-
-	}
-
 	public void addjiecai() {
 
 		this.jiecai++;
 	}
 
-	public void addjiecaiT() {
-
-		this.jiecai = this.jiecai + 2.0;
+	public void addjiecaiT(){
+		
+		this.jiecai = this.jiecai+2.0;
 	}
-
+	
 	public void multjiecai(double mult) {
 
 		this.jiecai = this.jiecai * mult;
-	}
-
-	public void addjiecaiG() {
-
-		this.jiecai = this.jiecai + 0.5;
-
 	}
 
 	public void addshishen() {
@@ -140,21 +128,15 @@ public class BaZiShiShenValue {
 		this.jiecai++;
 	}
 
-	public void addshishenT() {
-
-		this.shishen = this.shishen + 2.0;
-
+	public void addshishenT(){
+		
+		this.shishen = this.shishen+2.0;
+		
 	}
-
+	
 	public void multshishen(double mult) {
 
 		this.shishen = this.shishen * mult;
-	}
-
-	public void addshishenG() {
-
-		this.shishen = this.shishen + 0.5;
-
 	}
 
 	public void addshangguan() {
@@ -162,18 +144,13 @@ public class BaZiShiShenValue {
 		this.shangguan++;
 	}
 
-	public void addshangguanT() {
-
-		this.shangguan = this.shangguan + 2.0;
-
+	
+	public void addshangguanT(){
+		
+		this.shangguan = this.shangguan+2.0;
+		
 	}
-
-	public void addshangguanG() {
-
-		this.shangguan = this.shangguan + 0.5;
-
-	}
-
+	
 	public void multshangguan(double mult) {
 
 		this.shangguan = this.shangguan * mult;
@@ -184,20 +161,15 @@ public class BaZiShiShenValue {
 		this.zhengcai++;
 	}
 
-	public void addzhengcaiT() {
-
-		this.zhengcai = this.zhengcai++;
-
+	public void addzhengcaiT(){
+		
+		this.zhengcai = this.zhengcai ++;
+		
 	}
-
+	
 	public void multzhengcai(double mult) {
 
 		this.zhengcai = this.zhengcai * mult;
-	}
-
-	public void addzhengcaiG() {
-
-		this.zhengcai = this.zhengcai + 0.5;
 	}
 
 	public void addpiancai() {
@@ -205,21 +177,15 @@ public class BaZiShiShenValue {
 		this.piancai++;
 	}
 
-	public void addpiancaiT() {
-
-		this.piancai = this.piancai + 2.0;
-
+	public void addpiancaiT(){
+		
+		this.piancai = this.piancai+2.0;
+		
 	}
-
+	
 	public void multpiancai(double mult) {
 
 		this.piancai = this.zhengcai * mult;
-	}
-
-	public void addpiancaiG() {
-
-		this.piancai = this.piancai + 0.5;
-
 	}
 
 	public void addzhengguan() {
@@ -227,20 +193,15 @@ public class BaZiShiShenValue {
 		this.zhengguan++;
 	}
 
-	public void addzhengguanT() {
-
-		this.zhengguan = this.zhengguan + 2.0;
+	public void addzhengguanT(){
+		
+		
+		this.zhengguan = this.zhengguan+2.0;
 	}
-
+	
 	public void multzhengguan(double mult) {
 
 		this.zhengguan = this.zhengguan * mult;
-	}
-
-	public void addzhengguanG() {
-
-		this.zhengguan = this.zhengguan + 0.5;
-
 	}
 
 	public void addqisha() {
@@ -248,21 +209,16 @@ public class BaZiShiShenValue {
 		this.qisha++;
 	}
 
-	public void addqishaT() {
-
-		this.qisha = this.qisha + 2.0;
-
+	
+	public void addqishaT(){
+		
+		this.qisha = this.qisha+2.0;
+		
 	}
-
+	
 	public void multqisha(double mult) {
 
 		this.qisha = this.qisha * mult;
-	}
-
-	public void addqishaG() {
-
-		this.qisha = this.qisha + 0.5;
-
 	}
 
 	public void addzhengyin() {
@@ -270,21 +226,16 @@ public class BaZiShiShenValue {
 		this.zhengyin++;
 	}
 
-	public void addzhengyinT() {
-
-		this.zhengyin = this.zhengyin + 2.0;
-
+	
+	public void addzhengyinT(){
+		
+		this.zhengyin = this.zhengyin+2.0;
+		
 	}
-
+	
 	public void multzhengyin(double mult) {
 
 		this.zhengyin = this.zhengyin * mult;
-	}
-
-	public void addzhengyinG() {
-
-		this.zhengyin = this.zhengyin + 0.5;
-
 	}
 
 	public void addpianyin() {
@@ -292,22 +243,16 @@ public class BaZiShiShenValue {
 		this.pianyin++;
 	}
 
-	public void addpianyinT() {
-
-		this.pianyin = this.pianyin + 2.0;
-
+	
+	public void addpianyinT(){
+		
+		this.pianyin = this.pianyin+2.0;
+		
 	}
-
+	
 	public void multpianyin(double mult) {
 
 		this.pianyin = this.pianyin * mult;
-
-		
-	}
-
-	public void addpianyinG() {
-
-		this.pianyin = this.pianyin + 0.5;
 
 	}
 }
