@@ -19,27 +19,27 @@ public class Calculate {
 
 		baZiShiShenValue = shenDefineAndCal.doDefineAndCal(bzInfo);
 
-		list.add("bijie" + "," + stacticMethod.WUxing(riGan, "bijian") + ","
+		list.add("shen" + "," + stacticMethod.WUxing(riGan, "bijian") + ","
 				+ (baZiShiShenValue.getBijian() + baZiShiShenValue.getBijian()));
-		list.add("shishang"
+		list.add("shi"
 				+ ","
 				+ stacticMethod.WUxing(riGan, "shishen")
 				+ ","
 				+ (baZiShiShenValue.getShishen() + baZiShiShenValue
 						.getShangguan()));
-		list.add("qiqie"
+		list.add("cai"
 				+ ","
 				+ stacticMethod.WUxing(riGan, "zhengcai")
 				+ ","
 				+ (baZiShiShenValue.getZhengcai() + baZiShiShenValue
 						.getPiancai()));
-		list.add("guansha"
+		list.add("guan"
 				+ ","
 				+ stacticMethod.WUxing(riGan, "zhengguan")
 				+ ","
 				+ (baZiShiShenValue.getZhengguan() + baZiShiShenValue
 						.getQisha()));
-		list.add("xiaoyin"
+		list.add("yin"
 				+ ","
 				+ stacticMethod.WUxing(riGan, "zhengyin")
 				+ ","
