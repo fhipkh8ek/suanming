@@ -4,20 +4,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import freemarker.cache.StringTemplateLoader;
+
 public class BaseUtils {
 
-	public static final String[] jiazhi = { 
-		"甲子", "乙丑", "丙寅", "丁卯", "戊辰", "己巳",
-		"庚午", "辛未", "壬申", "癸酉", "甲戌", "乙亥", 
-		"丙子", "丁丑", "戊寅", "己卯", "庚辰", "辛巳", 
-		"壬午", "癸未", "甲申", "乙酉", "丙戌", "丁亥", 
-		"戊子", "己丑", "庚寅", "辛卯", "壬辰", "癸巳", 
-		"甲午", "乙未", "丙申", "丁酉", "戊戌", "己亥", 
-		"庚子", "辛丑", "壬寅", "癸卯", "甲辰", "乙巳", 
-		"丙午", "丁未", "戊申", "己酉", "庚戌", "辛亥", 
-		"壬子", "癸丑", "甲寅", "乙卯", "丙辰", "丁巳", 
-		"戊午", "己未", "庚申", "辛酉", "壬戌", "癸亥" 
-		};
 	/**
 	 * 
 	 * @Title: getNowTime
@@ -199,49 +189,49 @@ public class BaseUtils {
 			return "西北";
 		}
 	}
-	
+
 	/**
 	 * 
-	* @Title: getShiChen
-	* @Description: 地支转换成时辰数字
-	* @param now
-	* @return
-	* @throws ParseException
-	* @autor:weixin
-	* @time:2015年1月30日 下午4:50:14
+	 * @Title: getShiChen
+	 * @Description: 地支转换成时辰数字
+	 * @param now
+	 * @return
+	 * @throws ParseException
+	 * @autor:weixin
+	 * @time:2015年1月30日 下午4:50:14
 	 */
-	public static String dizhiToNum(String now) throws ParseException{
+	public static String dizhiToNum(String now) throws ParseException {
 		if (BaseUtils.judgeTimeIn(now, "21:00:00", "00:59:59") > 0) {
 			return "1";
 		} else if (BaseUtils.judgeTimeIn(now, "01:00:00", "02:59:59") > 0) {
 			return "2";
-		}else if (BaseUtils.judgeTimeIn(now, "03:00:00", "04:59:59") > 0) {
+		} else if (BaseUtils.judgeTimeIn(now, "03:00:00", "04:59:59") > 0) {
 			return "3";
-		}else if (BaseUtils.judgeTimeIn(now, "05:00:00", "06:59:59") > 0) {
+		} else if (BaseUtils.judgeTimeIn(now, "05:00:00", "06:59:59") > 0) {
 			return "4";
-		}else if (BaseUtils.judgeTimeIn(now, "07:00:00", "08:59:59") > 0) {
+		} else if (BaseUtils.judgeTimeIn(now, "07:00:00", "08:59:59") > 0) {
 			return "5";
-		}else if (BaseUtils.judgeTimeIn(now, "09:00:00", "10:59:59") > 0) {
+		} else if (BaseUtils.judgeTimeIn(now, "09:00:00", "10:59:59") > 0) {
 			return "6";
-		}else if (BaseUtils.judgeTimeIn(now, "11:00:00", "12:59:59") > 0) {
+		} else if (BaseUtils.judgeTimeIn(now, "11:00:00", "12:59:59") > 0) {
 			return "7";
-		}else if (BaseUtils.judgeTimeIn(now, "13:00:00", "14:59:59") > 0) {
+		} else if (BaseUtils.judgeTimeIn(now, "13:00:00", "14:59:59") > 0) {
 			return "8";
-		}else if (BaseUtils.judgeTimeIn(now, "15:00:00", "16:59:59") > 0) {
+		} else if (BaseUtils.judgeTimeIn(now, "15:00:00", "16:59:59") > 0) {
 			return "9";
-		}else if (BaseUtils.judgeTimeIn(now, "17:00:00", "18:59:59") > 0) {
+		} else if (BaseUtils.judgeTimeIn(now, "17:00:00", "18:59:59") > 0) {
 			return "10";
-		}else if (BaseUtils.judgeTimeIn(now, "19:00:00", "20:59:59") > 0) {
+		} else if (BaseUtils.judgeTimeIn(now, "19:00:00", "20:59:59") > 0) {
 			return "11";
-		}else{
+		} else {
 			return "12";
 		}
 	}
-	
 
 	public static void main(String[] args) throws ParseException {
 
 		System.out.println(compareDate(getNowTime(4), "18:00:00"));
 
 	}
+
 }
