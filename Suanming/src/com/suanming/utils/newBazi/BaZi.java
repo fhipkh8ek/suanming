@@ -1,27 +1,26 @@
-package com.suanming.utils.bazi;
+package com.suanming.utils.newBazi;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Lunar {
-
+/**
+ * 根据西元的生日时辰获取某个人的生辰八字，以及农历生日
+ *
+ * */
+public class BaZi {
 	private int year;
 	private int month;
 	private int day;
-	//是否闰年
 	private boolean leap;
-	
 	Date baseDate = null;
-	
-	//农历月
-	final static String chineseNumber[] = { "1", "2", "3", "4", "5", "6", "7",
-			"8", "9", "10", "11", "12" };
-	final static String[] Gan = { "甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬",
-			"癸" };
-	final static String[] Zhi = { "子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申",
-			"酉", "戌", "亥" };
+	final static String chineseNumber[] = { "正", "二", "三", "四", "五", "六", "七",
+			"八", "九", "十", "十一", "腊" };
+	public final static String[] Gan = { "甲", "乙", "丙", "丁", "戊", "己", "庚",
+			"辛", "壬", "癸" };
+	public final static String[] Zhi = { "子", "丑", "寅", "卯", "辰", "巳", "午",
+			"未", "申", "酉", "戌", "亥" };
 	static SimpleDateFormat chineseDateFormat = new SimpleDateFormat(
 			"yyyy-MM-dd");
 	final static long[] lunarInfo = new long[] { 0x04bd8, 0x04ae0, 0x0a570,
@@ -46,26 +45,70 @@ public class Lunar {
 			0x0d530, 0x05aa0, 0x076a3, 0x096d0, 0x04bd7, 0x04ad0, 0x0a4d0,
 			0x1d0b6, 0x0d250, 0x0d520, 0x0dd45, 0x0b5a0, 0x056d0, 0x055b2,
 			0x049b0, 0x0a577, 0x0a4b0, 0x0aa50, 0x1b255, 0x06d20, 0x0ada0 };
+
+	/**
+	 * @return the month
+	 */
+	public String getMonth() {
+		return chineseNumber[month - 1];
+	}
+
+	/**
+	 * @return the year
+	 */
+	public String getYear() {
+		return getYearStr(year);
+	}
+
+	/**
+	 * @return the year
+	 */
+	public int getnumberYear() {
+		return year;
+	}
+
+	/**
+	 * @return the year
+	 */
+	public int getnumbermonth() {
+		return month;
+	}
+
+	/**
+	 * @return the year 返回年的顺序，子0 丑2
+	 */
+	public int getYearindex() {
+		return (year - 4) % 12;
+	}
+
+	/**
+	 * @return the day
+	 */
+	public String getDay() {
+		return getChinaDayString(day);
+	}
+
 	/**
 	 * 六十甲子
 	 */
-	public static final String[] jiazhi = { 
-			"甲子", "乙丑", "丙寅", "丁卯", "戊辰", "己巳",
-			"庚午", "辛未", "壬申", "癸酉", "甲戌", "乙亥", 
-			"丙子", "丁丑", "戊寅", "己卯", "庚辰", "辛巳", 
-			"壬午", "癸未", "甲申", "乙酉", "丙戌", "丁亥", 
-			"戊子", "己丑", "庚寅", "辛卯", "壬辰", "癸巳", 
-			"甲午", "乙未", "丙申", "丁酉", "戊戌", "己亥", 
-			"庚子", "辛丑", "壬寅", "癸卯", "甲辰", "乙巳", 
-			"丙午", "丁未", "戊申", "己酉", "庚戌", "辛亥", 
-			"壬子", "癸丑", "甲寅", "乙卯", "丙辰", "丁巳", 
-			"戊午", "己未", "庚申", "辛酉", "壬戌", "癸亥" 
-			};
+	public static final String[] jiazhi = { "甲子", "乙丑", "丙寅", "丁卯", "戊辰", "己巳",
+			"庚午", "辛未", "壬申", "癸酉", "甲戌", "乙亥", "丙子", "丁丑", "戊寅", "己卯", "庚辰",
+			"辛巳", "壬午", "癸未", "甲申", "乙酉", "丙戌", "丁亥", "戊子", "己丑", "庚寅", "辛卯",
+			"壬辰", "癸巳", "甲午", "乙未", "丙申", "丁酉", "戊戌", "己亥", "庚子", "辛丑", "壬寅",
+			"癸卯", "甲辰", "乙巳", "丙午", "丁未", "戊申", "己酉", "庚戌", "辛亥", "壬子", "癸丑",
+			"甲寅", "乙卯", "丙辰", "丁巳", "戊午", "己未", "庚申", "辛酉", "壬戌", "癸亥" };
 	private Calendar cal;
 
+	/**
+	 * @param hour
+	 *            这里的时间范围是1-12，具体几点到几点是子时、丑时请参考相关文档 具体的选择如下 "子：1", "丑：2", "寅：3",
+	 *            "卯：4", "辰：5", "巳：6", "午：7", "未：8", "申：9", "酉：10", "戌：11",
+	 *            "亥：12"
+	 * */
 	public String getYearGanZhi(int hour) {
+		// 1864年是甲子年，每隔六十年一个甲子
 		int idx = (year - 1864) % 60;
-		// 没有过春节的话那么年还算上一年的
+		// 没有过春节的话那么年还算上一年的，此处求的年份的干支
 		String y = jiazhi[idx];
 
 		String m = "";
@@ -79,6 +122,7 @@ public class Lunar {
 		idxm = (idx + 1) * 2;
 		if (idxm == 10)
 			idxm = 0;
+		// 求的月份的干支
 		m = Gan[(idxm + month - 1) % 10] + Zhi[(month + 2 - 1) % 12];
 
 		/*
@@ -86,6 +130,7 @@ public class Lunar {
 		 */
 		int offset = (int) ((cal.getTime().getTime() - baseDate.getTime()) / 86400000L);
 		offset = (offset + 40) % 60;
+		// 求的日的干支
 		d = jiazhi[offset];
 
 		/**
@@ -93,10 +138,10 @@ public class Lunar {
 		 */
 
 		offset = (offset % 5) * 2;
-
-		h = Gan[(offset + hour - 1) % 10] + Zhi[hour - 1];
-
-		return y + m + d + h;
+		// 求得时辰的干支
+		h = Gan[(offset + hour) % 10] + Zhi[hour];
+		// 在此处输出我们的年月日时的天干地支
+		return y + "," + m + "," + d + "," + h;
 	}
 
 	public String getShichenFromDay(int offset) {
@@ -105,7 +150,6 @@ public class Lunar {
 	}
 
 	// ====== 传回农历 y年的总天数
-
 	final private static int yearDays(int y) {
 		int i, sum = 348;
 		for (i = 0x8000; i > 0x8; i >>= 1) {
@@ -143,21 +187,34 @@ public class Lunar {
 		}
 	}
 
-	// ====== 传回农历 y年的生肖
+	/***
+	 * @return 传回农历 y年的生肖
+	 */
 	final public String animalsYear() {
 		final String[] Animals = new String[] { "鼠", "牛", "虎", "兔", "龙", "蛇",
 				"马", "羊", "猴", "鸡", "狗", "猪" };
 		return Animals[(year - 4) % 12];
 	}
 
+	// ====== 传入 月日的offset 传回干支, 0=甲子
+	final private static String cyclicalm(int num) {
+		return (Gan[num % 10] + Zhi[num % 12]);
+	}
+
+	// ====== 传入 offset 传回干支, 0=甲子
+	final public String cyclical() {
+		int num = year - 1900 + 36;
+		return (cyclicalm(num));
+	}
+
 	/**
 	 * 传出y年m月d日对应的农历. yearCyl3:农历年与1864的相差数 ? monCyl4:从1900年1月31日以来,闰月数
 	 * dayCyl5:与1900年1月31日相差的天数,再加40 ?
-	 * 
+	 *
 	 * @param cal
 	 * @return
 	 */
-	public Lunar(Calendar cal) {
+	public BaZi(Calendar cal) {
 		this.cal = cal;
 		int yearCyl, monCyl, dayCyl;
 		int leapMonth = 0;
@@ -167,14 +224,11 @@ public class Lunar {
 		} catch (ParseException e) {
 			e.printStackTrace(); // To change body of catch statement use
 									// Options | File Templates.
-
 		}
-
 		// 求出和1900年1月31日相差的天数
 		int offset = (int) ((cal.getTime().getTime() - baseDate.getTime()) / 86400000L);
 		dayCyl = offset + 40;
 		monCyl = 14;
-
 		// 用offset减去每农历年的天数
 		// 计算当天是农历第几天
 		// i最终结果是农历的年份
@@ -192,12 +246,9 @@ public class Lunar {
 		}
 		// 农历年份
 		year = iYear;
-
 		yearCyl = iYear - 1864;
 		leapMonth = leapMonth(iYear); // 闰哪个月,1-12
-
 		leap = false;
-
 		// 用当年的天数offset,逐个减去每月（农历）的天数，求出当天是本月的第几天
 		int iMonth, daysOfMonth = 0;
 		for (iMonth = 1; iMonth < 13 && offset > 0; iMonth++) {
@@ -238,34 +289,24 @@ public class Lunar {
 		day = offset + 1;
 	}
 
-	
-	//获取农历日
 	public static String getChinaDayString(int day) {
-		String chineseTen[] = { "0", "1", "2", "3" };
+		String chineseTen[] = { "初", "十", "廿", "卅" };
 		int n = day % 10 == 0 ? 9 : day % 10 - 1;
 		if (day > 30) {
 			return "";
 		}
 		if (day == 10) {
-			return "10";
+			return "初十";
 		} else {
 			return chineseTen[day / 10] + chineseNumber[n];
 		}
 	}
 
-	//返回阴历
-	public String chineseDatetoString() {
-		return chineseNumber[month - 1] + "," + getChinaDayString(day);
-	}
-	
-	
 	public String toString() {
 		return getYearStr(year) + "年" + (leap ? "闰" : "")
 				+ chineseNumber[month - 1] + "月" + getChinaDayString(day);
 	}
-	
-	
-	//获取农历年
+
 	public String getYearStr(int year) {
 		String[] chineseword = { "零", "一", "二", "三", "四", "五", "六", "七", "八",
 				"九" };
@@ -284,5 +325,34 @@ public class Lunar {
 		return ys;
 	}
 
-	
+	public static String getSixtyDay() {
+		String temp = "";
+		for (int i = 0; i < 60; i++) {
+			temp += ",/" + cyclicalm(i) + "/";
+		}
+		return temp;
+	}
+
+	/**
+	 * 针对一个在西元 1983-01-10 中午12：30生的人的计算。 这里12点半在中国的古代历书中算是午时
+	 * 子时24.00－2.00,丑时2.00－4.00,寅时4.00－6.00,卯时6.00－8.00,
+	 * 辰时8.00－10.00,巳时10.00－12.00,午时12.00－14.00,未时14.00－16.00
+	 * 申时16.00－18.00,酉时18.00－20.00,戌时20.00－22.00,亥时22.00－24.00
+	 * */
+	public static void main(String[] args) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Calendar cal = Calendar.getInstance();
+		try {
+			// 设定此人的西元时间为1983-01-10
+			cal.setTime(sdf.parse("1990-4-22"));
+			BaZi lunar = new BaZi(cal);
+			System.out.println("此人农历的日期【" + lunar.toString() + "】");
+			// 此处是为了获取时间在中国的八字学说上的显示，此人是午时生的
+			System.out.println("此人八字【" + lunar.getYearGanZhi(2) + "】");
+			// 获取生肖
+			System.out.println("此人的农历生肖【" + lunar.animalsYear() + "】");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

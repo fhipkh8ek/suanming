@@ -6,30 +6,32 @@ public class stacticMethod {
 
 		String[][] shishenWuXing = {
 
-				{ "jia", "yi", "bing", "ding", "wu", "ji", "geng", "xin",
-						"ren", "gui" },
-				{ "yi", "jia", "ding", "bing", "ji", "wu", "xin", "geng",
-						"gui", "ren" },
-				{ "bing", "ding", "wu", "ji", "geng", "xin", "ren", "gui",
-						"jia", "yi" },
-				{ "ding", "bing", "ji", "wu", "xin", "geng", "gui", "ren",
-						"yi", "jia" },
-				{ "ji", "wu", "xin", "geng", "gui", "ren", "yi", "jia", "ding",
-						"bing" },
-				{ "wu", "ji", "geng", "xin", "ren", "gui", "jia", "yi", "bing",
-						"ding" },
-				{ "xin", "geng", "gui", "ren", "yi", "jia", "ding", "bing",
-						"ding", "wu" },
-				{ "geng", "xin", "gui", "ren", "yi", "jia", "ding", "bing",
-						"wu", "ji" },
-				{ "gui", "ren", "yi", "jia", "ding", "bing", "ji", "wu", "xin",
-						"geng" },
-				{ "ren", "gui", "jia", "yi", "bing", "ding", "wu", "ji",
-						"geng", "xin" },
+				
+				//比肩
+				{ "jia", "yi", "bing", "ding", "wu", "ji", "geng", "xin","ren", "gui" },
+				//劫财		
+				{ "yi", "jia", "ding", "bing", "ji", "wu", "xin", "geng","gui", "ren" },
+				//食神		
+				{ "bing", "ding", "wu", "ji", "geng", "xin", "ren", "gui","jia", "yi" },
+				//伤官		
+				{ "ding", "bing", "ji", "wu", "xin", "geng", "gui", "ren","yi", "jia" },
+				//正财		
+				{ "ji", "wu", "xin", "geng", "gui", "ren", "yi", "jia", "ding","bing" },
+				//偏财		
+				{ "wu", "ji", "geng", "xin", "ren", "gui", "jia", "yi", "bing","ding" },
+				//正官		
+				{ "xin", "geng", "gui", "ren", "yi", "jia", "ding","bing","ding", "wu"},
+				//七杀	
+				{ "geng", "xin", "ren", "gui", "jia", "yi", "bing", "ding","wu", "ji" },
+				//正印		
+				{ "gui", "ren", "yi", "jia", "ding", "bing", "ji", "wu", "xin","geng" },
+				//偏印		
+				{ "ren", "gui", "jia", "yi", "bing", "ding", "wu", "ji","geng", "xin" },
+						
 
 		};
 
-		return shishenWuXing[shuzi(rigan)][shuzi(shishen)];
+		return shishenWuXing[shuzi(shishen)][shuzi(rigan)];
 
 	}
 
@@ -82,7 +84,7 @@ public class stacticMethod {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(WUxing("jia", "shishen"));
+		System.out.println(WUxing("geng", "zhengyin"));
 
 	}
 }

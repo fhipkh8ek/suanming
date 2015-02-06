@@ -13,7 +13,7 @@ public class ShiShenOp {
 
 		for (int i = 0; i < tiangan.length; i++) {
 
-			String shiShen = sDefine.doDefine(tiangan[i] + rigan);
+			String shiShen = sDefine.doDefine(rigan+tiangan[i]);
 
 			if (shiShen.equals("bijian")) {
 				bsv.multbijian(vDefine.doDefine(tiangan[i] + yuezhi));
