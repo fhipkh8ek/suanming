@@ -180,13 +180,12 @@ public class BaZiShiShenValue {
 	}
 
 	public void addzhengcai() {
-
 		this.zhengcai++;
 	}
 
 	public void addzhengcaiT() {
 
-		this.zhengcai = this.zhengcai++;
+		this.zhengcai = this.zhengcai + 2;
 
 	}
 

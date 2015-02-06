@@ -8,7 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
+
 import com.suanming.utils.bazi.BaziInfo;
+import com.suanming.utils.newBazi.PaiPanClass;
 import com.suanming.utils.wenren.Result;
 
 @Controller
@@ -30,14 +32,18 @@ public class WenrenController {
 		}
 		Integer inHour2 = Integer.parseInt(inHour2String);
 		
-		BaziInfo baziInfo = new BaziInfo();
-		//八字
-		String firbz = baziInfo.getBaziInfo(inDate1,inHour1);
+		PaiPanClass baziInfo = new PaiPanClass();
 		
-		String secbz = baziInfo.getBaziInfo(inDate2,inHour2);
+		//八字
+		String firbz = baziInfo.getBaZiInfo(inDate1+" "+inHour1);
+		
+		String secbz = baziInfo.getBaZiInfo(inDate2+" "+inHour2);
 		
 		Result result = new Result();
 		String duanyu = result.getDuanyu(firbz, secbz,type);
+		
+		System.out.println("第一个人八字："+firbz);
+		System.out.println("第二个人八字："+secbz);
 		
 		model.addAttribute("xingge", duanyu.split("@")[0]);
 		model.addAttribute("zongjia", duanyu.split("@")[1]);
