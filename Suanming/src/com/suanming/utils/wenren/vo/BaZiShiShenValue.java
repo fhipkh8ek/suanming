@@ -302,6 +302,7 @@ public class BaZiShiShenValue {
 
 		this.pianyin = this.pianyin * mult;
 
+		
 	}
 
 	public void addpianyinG() {
