@@ -185,7 +185,7 @@ public class BaZiShiShenValue {
 
 	public void addzhengcaiT() {
 
-		this.zhengcai = this.zhengcai++;
+		this.zhengcai = this.zhengcai + 2;
 
 	}
 
