@@ -19,26 +19,33 @@ public class Calculate {
 
 		baZiShiShenValue = shenDefineAndCal.doDefineAndCal(bzInfo);
 
-		list.add("bijian" + "," + stacticMethod.WUxing(riGan, "bijian") + ","
-				+ baZiShiShenValue.getBijian());
-		list.add("jiecai" + "," + stacticMethod.WUxing(riGan, "jiecai") + ","
-				+ baZiShiShenValue.getJiecai());
-		list.add("shishen" + "," + stacticMethod.WUxing(riGan, "shishen") + ","
-				+ baZiShiShenValue.getShishen());
-		list.add("shangguan" + "," + stacticMethod.WUxing(riGan, "shangguan")
-				+ "," + baZiShiShenValue.getShangguan());
-		list.add("zhengcai" + "," + stacticMethod.WUxing(riGan, "zhengcai")
-				+ "," + baZiShiShenValue.getZhengcai());
-		list.add("piancai" + "," + stacticMethod.WUxing(riGan, "piancai") + ","
-				+ baZiShiShenValue.getPiancai());
-		list.add("zhengguan" + "," + stacticMethod.WUxing(riGan, "zhengguan")
-				+ "," + baZiShiShenValue.getZhengguan());
-		list.add("qisha" + "," + stacticMethod.WUxing(riGan, "qisha") + ","
-				+ baZiShiShenValue.getQisha());
-		list.add("zhengyin" + "," + stacticMethod.WUxing(riGan, "zhengyin")
-				+ "," + baZiShiShenValue.getZhengyin());
-		list.add("pianyin" + "," + stacticMethod.WUxing(riGan, "pianyin") + ","
-				+ baZiShiShenValue.getPianyin());
+		list.add("bijie" + "," + stacticMethod.WUxing(riGan, "bijian") + ","
+				+ (baZiShiShenValue.getBijian() + baZiShiShenValue.getBijian()));
+		list.add("shishang"
+				+ ","
+				+ stacticMethod.WUxing(riGan, "shishen")
+				+ ","
+				+ (baZiShiShenValue.getShishen() + baZiShiShenValue
+						.getShangguan()));
+		list.add("qiqie"
+				+ ","
+				+ stacticMethod.WUxing(riGan, "zhengcai")
+				+ ","
+				+ (baZiShiShenValue.getZhengcai() + baZiShiShenValue
+						.getPiancai()));
+		list.add("guansha"
+				+ ","
+				+ stacticMethod.WUxing(riGan, "zhengguan")
+				+ ","
+				+ (baZiShiShenValue.getZhengguan() + baZiShiShenValue
+						.getQisha()));
+		list.add("xiaoyin"
+				+ ","
+				+ stacticMethod.WUxing(riGan, "zhengyin")
+				+ ","
+				+ (baZiShiShenValue.getZhengyin() + baZiShiShenValue
+						.getPianyin()));
+
 		return list;
 	}
 }
