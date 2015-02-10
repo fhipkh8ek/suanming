@@ -76,5 +76,4 @@ public class Result {
 		System.out.println(result.duanYu("丙寅辛丑辛酉戊子"));
 
 	}
-
 }
