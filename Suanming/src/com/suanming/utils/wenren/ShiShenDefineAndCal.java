@@ -34,7 +34,7 @@ public class ShiShenDefineAndCal {
 		gan[1] = yueGan;
 		gan[2] = shiGan;
 
-		bsv = sOp.doReturn(gan, riGan, nianZhi, yueZhi, riZhi, shiZhi);
+		bsv = sOp.doReturn(riGan, nianZhi, yueZhi, riZhi, shiZhi);
 		return bsv;
 	}
 }

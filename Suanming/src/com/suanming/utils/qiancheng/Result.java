@@ -62,6 +62,8 @@ public class Result {
 
 		}
 
+		System.out.println(wushenpaixu[0] + "@" + wushenpaixu[1] + "@"
+				+ wushenpaixu[2]);
 		shitu = PropertyUtil.getValue(wushenpaixu[0] + "@" + wushenpaixu[1]
 				+ "@" + wushenpaixu[2], "qiancheng.properties");
 		System.out.println(shitu);
@@ -74,7 +76,7 @@ public class Result {
 	public static void main(String[] args) {
 
 		Result result = new Result();
-		System.out.println(result.duanYu("丙寅辛丑辛酉戊子"));
+		System.out.println(result.duanYu("戊辰己未癸未丁巳"));
 
 	}
 

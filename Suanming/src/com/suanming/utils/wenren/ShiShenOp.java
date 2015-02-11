@@ -4,12 +4,15 @@ import com.suanming.utils.wenren.vo.BaZiShiShenValue;
 
 public class ShiShenOp {
 
-	public BaZiShiShenValue doReturn(String[] tiangan, String rigan,
-			String nianzhi, String yuezhi, String rizhi, String shizhi) {
+	public BaZiShiShenValue doReturn(String rigan, String nianzhi,
+			String yuezhi, String rizhi, String shizhi) {
 
 		BaZiShiShenValue bsv = new BaZiShiShenValue();
 		ShiShenDefine sDefine = new ShiShenDefine();
 		ValueDefine vDefine = new ValueDefine();
+
+		String tiangan[] = { "jia", "yi", "bing", "ding", "wu", "ji", "geng",
+				"xin", "ren", "gui" };
 
 		for (int i = 0; i < tiangan.length; i++) {
 
@@ -44,7 +47,7 @@ public class ShiShenOp {
 
 		String shiShenN = sDefine.doDefine(rigan + nianzhi);
 
-		switch (shiShenN) { 
+		switch (shiShenN) {
 		case "bijian":
 			bsv.addbijianN();
 
@@ -86,7 +89,7 @@ public class ShiShenOp {
 			break;
 		}
 
-		String shiShenY = sDefine.doDefine(rigan + nianzhi);
+		String shiShenY = sDefine.doDefine(rigan + yuezhi);
 
 		switch (shiShenY) {
 		case "bijian":
@@ -130,7 +133,7 @@ public class ShiShenOp {
 			break;
 		}
 
-		String shiShenR = sDefine.doDefine(rigan + nianzhi);
+		String shiShenR = sDefine.doDefine(rigan + rizhi);
 
 		switch (shiShenR) {
 		case "bijian":
@@ -174,7 +177,7 @@ public class ShiShenOp {
 			break;
 		}
 
-		String shiShenS = sDefine.doDefine(rigan + nianzhi);
+		String shiShenS = sDefine.doDefine(rigan + shizhi);
 
 		switch (shiShenS) {
 		case "bijian":
