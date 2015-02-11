@@ -44,7 +44,7 @@ public class ShiShenOp {
 
 		String shiShenN = sDefine.doDefine(rigan + nianzhi);
 
-		switch (shiShenN) {
+		switch (shiShenN) { 
 		case "bijian":
 			bsv.addbijianN();
 
