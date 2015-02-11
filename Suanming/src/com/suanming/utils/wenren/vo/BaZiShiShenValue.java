@@ -93,14 +93,14 @@ public class BaZiShiShenValue {
 		this.pianyin = pianyin;
 	}
 
-	public void addbijian() {
+	public void addbijianN() {
 
-		this.bijian++;
+		this.bijian = this.bijian + 1.5;
 	}
 
-	public void addbijianT() {
+	public void addbijianY() {
 
-		this.bijian = this.bijian + 2.0;
+		this.bijian = this.bijian + 3.0;
 	}
 
 	public void multbijian(double mult) {
@@ -108,20 +108,26 @@ public class BaZiShiShenValue {
 		this.bijian = this.bijian * mult;
 	}
 
-	public void addbijianG() {
+	public void addbijianR() {
 
-		this.bijian = this.bijian + 0.5;
+		this.bijian = this.bijian + 2.0;
 
 	}
 
-	public void addjiecai() {
+	public void addbijianS() {
 
-		this.jiecai++;
+		this.bijian++;
+
 	}
 
-	public void addjiecaiT() {
+	public void addjiecaiN() {
 
-		this.jiecai = this.jiecai + 2.0;
+		this.jiecai = this.bijian + 1.5;
+	}
+
+	public void addjiecaiY() {
+
+		this.jiecai = this.jiecai + 3.0;
 	}
 
 	public void multjiecai(double mult) {
@@ -129,20 +135,26 @@ public class BaZiShiShenValue {
 		this.jiecai = this.jiecai * mult;
 	}
 
-	public void addjiecaiG() {
+	public void addjiecaiR() {
 
-		this.jiecai = this.jiecai + 0.5;
+		this.jiecai = this.jiecai + 2.0;
 
 	}
 
-	public void addshishen() {
+	public void addjiecaiS() {
 
-		this.jiecai++;
+		this.jiecai = this.jiecai + 2.0;
+
 	}
 
-	public void addshishenT() {
+	public void addshishenN() {
 
-		this.shishen = this.shishen + 2.0;
+		this.shishen = this.shishen + 1.5;
+	}
+
+	public void addshishenY() {
+
+		this.shishen = this.shishen + 3.0;
 
 	}
 
@@ -151,26 +163,38 @@ public class BaZiShiShenValue {
 		this.shishen = this.shishen * mult;
 	}
 
-	public void addshishenG() {
+	public void addshishenR() {
 
-		this.shishen = this.shishen + 0.5;
+		this.shishen = this.shishen + 2.0;
 
 	}
 
-	public void addshangguan() {
+	public void addshishenS() {
+
+		this.shishen++;
+
+	}
+
+	public void addshangguanN() {
+
+		this.shangguan = this.shangguan + 1.5;
+	}
+
+	public void addshangguanY() {
+
+		this.shangguan = this.shangguan + 3.0;
+
+	}
+
+	public void addshangguanR() {
+
+		this.shangguan = this.shangguan + 2;
+
+	}
+
+	public void addshangguanS() {
 
 		this.shangguan++;
-	}
-
-	public void addshangguanT() {
-
-		this.shangguan = this.shangguan + 2.0;
-
-	}
-
-	public void addshangguanG() {
-
-		this.shangguan = this.shangguan + 0.5;
 
 	}
 
@@ -179,13 +203,13 @@ public class BaZiShiShenValue {
 		this.shangguan = this.shangguan * mult;
 	}
 
-	public void addzhengcai() {
-		this.zhengcai++;
+	public void addzhengcaiN() {
+		this.zhengcai = this.zhengcai + 1.5;
 	}
 
-	public void addzhengcaiT() {
+	public void addzhengcaiY() {
 
-		this.zhengcai = this.zhengcai + 2;
+		this.zhengcai = this.zhengcai + 3.0;
 
 	}
 
@@ -194,19 +218,24 @@ public class BaZiShiShenValue {
 		this.zhengcai = this.zhengcai * mult;
 	}
 
-	public void addzhengcaiG() {
+	public void addzhengcaiR() {
 
-		this.zhengcai = this.zhengcai + 0.5;
+		this.zhengcai = this.zhengcai + 2.0;
 	}
 
-	public void addpiancai() {
+	public void addzhengcaiS() {
 
-		this.piancai++;
+		this.zhengcai++;
 	}
 
-	public void addpiancaiT() {
+	public void addpiancaiN() {
 
-		this.piancai = this.piancai + 2.0;
+		this.piancai = this.piancai + 1.5;
+	}
+
+	public void addpiancaiY() {
+
+		this.piancai = this.piancai + 3.0;
 
 	}
 
@@ -215,20 +244,26 @@ public class BaZiShiShenValue {
 		this.piancai = this.zhengcai * mult;
 	}
 
-	public void addpiancaiG() {
+	public void addpiancaiR() {
 
-		this.piancai = this.piancai + 0.5;
+		this.piancai = this.piancai + 2.0;
 
 	}
 
-	public void addzhengguan() {
+	public void addpiancaiS() {
 
-		this.zhengguan++;
+		this.piancai++;
+
 	}
 
-	public void addzhengguanT() {
+	public void addzhengguanN() {
 
-		this.zhengguan = this.zhengguan + 2.0;
+		this.zhengguan = this.zhengguan + 1.5;
+	}
+
+	public void addzhengguanY() {
+
+		this.zhengguan = this.zhengguan + 3.0;
 	}
 
 	public void multzhengguan(double mult) {
@@ -236,20 +271,26 @@ public class BaZiShiShenValue {
 		this.zhengguan = this.zhengguan * mult;
 	}
 
-	public void addzhengguanG() {
+	public void addzhengguanR() {
 
-		this.zhengguan = this.zhengguan + 0.5;
+		this.zhengguan = this.zhengguan + 2.0;
 
 	}
 
-	public void addqisha() {
+	public void addzhengguanS() {
 
-		this.qisha++;
+		this.zhengguan++;
+
 	}
 
-	public void addqishaT() {
+	public void addqishaN() {
 
-		this.qisha = this.qisha + 2.0;
+		this.qisha = this.qisha + 1.5;
+	}
+
+	public void addqishaY() {
+
+		this.qisha = this.qisha + 3.0;
 
 	}
 
@@ -258,20 +299,26 @@ public class BaZiShiShenValue {
 		this.qisha = this.qisha * mult;
 	}
 
-	public void addqishaG() {
+	public void addqishaR() {
 
-		this.qisha = this.qisha + 0.5;
+		this.qisha = this.qisha + 2.0;
 
 	}
 
-	public void addzhengyin() {
+	public void addqishaS() {
 
-		this.zhengyin++;
+		this.qisha++;
+
 	}
 
-	public void addzhengyinT() {
+	public void addzhengyinN() {
 
-		this.zhengyin = this.zhengyin + 2.0;
+		this.zhengyin = this.zhengyin + 1.5;
+	}
+
+	public void addzhengyinY() {
+
+		this.zhengyin = this.zhengyin + 3.0;
 
 	}
 
@@ -280,20 +327,26 @@ public class BaZiShiShenValue {
 		this.zhengyin = this.zhengyin * mult;
 	}
 
-	public void addzhengyinG() {
+	public void addzhengyinR() {
 
-		this.zhengyin = this.zhengyin + 0.5;
+		this.zhengyin = this.zhengyin + 2.0;
 
 	}
 
-	public void addpianyin() {
+	public void addzhengyinS() {
 
-		this.pianyin++;
+		this.zhengyin++;
+
 	}
 
-	public void addpianyinT() {
+	public void addpianyinN() {
 
-		this.pianyin = this.pianyin + 2.0;
+		this.pianyin = this.pianyin + 1.5;
+	}
+
+	public void addpianyinY() {
+
+		this.pianyin = this.pianyin + 3.0;
 
 	}
 
@@ -301,12 +354,17 @@ public class BaZiShiShenValue {
 
 		this.pianyin = this.pianyin * mult;
 
-		
 	}
 
-	public void addpianyinG() {
+	public void addpianyinR() {
 
-		this.pianyin = this.pianyin + 0.5;
+		this.pianyin = this.pianyin + 1.5;
+
+	}
+
+	public void addpianyinS() {
+
+		this.pianyin++;
 
 	}
 }
