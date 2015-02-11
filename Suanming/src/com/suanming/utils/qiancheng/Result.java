@@ -65,8 +65,9 @@ public class Result {
 		shitu = PropertyUtil.getValue(wushenpaixu[0] + "@" + wushenpaixu[1]
 				+ "@" + wushenpaixu[2], "qiancheng.properties");
 		System.out.println(shitu);
-		hangye = PropertyUtil.getValue(shenxingpaixu[0] + "@"
-				+ shenxingpaixu[1], "qiancheng.properties");
+
+		hangye = PropertyUtil.getValue(wuxingDefine(shenxingpaixu[0]) + "@"
+				+ wuxingDefine(shenxingpaixu[1]), "qiancheng.properties");
 		return shitu + "#" + hangye;
 	}
 
@@ -75,5 +76,38 @@ public class Result {
 		Result result = new Result();
 		System.out.println(result.duanYu("丙寅辛丑辛酉戊子"));
 
+	}
+
+	public String wuxingDefine(String tiangan) {
+
+		String wuxing = "";
+
+		if (tiangan.equals("jia") || tiangan.equals("yi")) {
+
+			wuxing = "mu";
+
+		}
+
+		else if (tiangan.equals("bing") || tiangan.endsWith("ding")) {
+
+			wuxing = "huo";
+		}
+
+		else if (tiangan.equals("wu") || tiangan.equals("ji")) {
+
+			wuxing = "tu";
+		}
+
+		else if (tiangan.equals("jin") || tiangan.equals("xin")) {
+
+			wuxing = "jin";
+		}
+
+		else if (tiangan.equals("ren") || tiangan.equals("gui")) {
+
+			wuxing = "shui";
+		}
+
+		return wuxing;
 	}
 }
