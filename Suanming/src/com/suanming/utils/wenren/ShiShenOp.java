@@ -5,7 +5,7 @@ import com.suanming.utils.wenren.vo.BaZiShiShenValue;
 public class ShiShenOp {
 
 	public BaZiShiShenValue doReturn(String[] tiangan, String rigan,
-			String[] dizhi, String yuezhi) {
+			String nianzhi, String yuezhi, String rizhi, String shizhi) {
 
 		BaZiShiShenValue bsv = new BaZiShiShenValue();
 		ShiShenDefine sDefine = new ShiShenDefine();
@@ -41,84 +41,177 @@ public class ShiShenOp {
 
 			}
 		}
-		for (int j = 0; j < dizhi.length; j++) {
 
-			String shiShen = sDefine.doDefine(rigan + dizhi[j]);
+		String shiShenN = sDefine.doDefine(rigan + nianzhi);
 
-			if (shiShen.equals("bijian")) {
-
-				bsv.addbijian();
-
-			}
-
-			else if (shiShen.equals("jiecai")) {
-
-				bsv.addjiecai();
-			}
-
-			else if (shiShen.equals("zhengcai")) {
-
-				bsv.addzhengcai();
-			}
-
-			else if (shiShen.equals("piancai")) {
-
-				bsv.addpiancai();
-			}
-
-			else if (shiShen.equals("zhengguan")) {
-				bsv.addzhengguan();
-			}
-
-			else if (shiShen.equals("qisha")) {
-
-				bsv.addqisha();
-			} else if (shiShen.equals("zhengyin")) {
-				bsv.addzhengyin();
-			} else if (shiShen.equals("pianyin")) {
-				bsv.addpianyin();
-			}
-
-		}
-
-		String shiShen = sDefine.doDefine(rigan + yuezhi);
-
-		switch (shiShen) {
+		switch (shiShenN) {
 		case "bijian":
-			bsv.addbijianT();
+			bsv.addbijianN();
 
 			break;
 
 		case "jiecai":
-			bsv.addjiecaiT();
+			bsv.addjiecaiN();
 			break;
 
 		case "shishen":
-			bsv.addshishenT();
+			bsv.addshishenN();
 			break;
 
 		case "shangguan":
-			bsv.addshangguan();
+			bsv.addshangguanN();
 			break;
 
 		case "zhengcai":
-			bsv.addzhengcaiT();
+			bsv.addzhengcaiN();
 			break;
 		case "piancai":
-			bsv.addpiancaiT();
+			bsv.addpiancaiN();
 			break;
 
 		case "zhengguan":
-			bsv.addzhengguan();
+			bsv.addzhengguanN();
 			break;
 		case "qisha":
-			bsv.addqishaT();
+			bsv.addqishaN();
 			break;
 		case "zhengyin":
-			bsv.addzhengyinT();
+			bsv.addzhengyinN();
 			break;
 		case "pianyin":
-			bsv.addpianyinT();
+			bsv.addpianyinN();
+			break;
+
+		default:
+			break;
+		}
+
+		String shiShenY = sDefine.doDefine(rigan + nianzhi);
+
+		switch (shiShenY) {
+		case "bijian":
+			bsv.addbijianY();
+
+			break;
+
+		case "jiecai":
+			bsv.addjiecaiY();
+			break;
+
+		case "shishen":
+			bsv.addshishenY();
+			break;
+
+		case "shangguan":
+			bsv.addshangguanY();
+			break;
+
+		case "zhengcai":
+			bsv.addzhengcaiY();
+			break;
+		case "piancai":
+			bsv.addpiancaiY();
+			break;
+
+		case "zhengguan":
+			bsv.addzhengguanY();
+			break;
+		case "qisha":
+			bsv.addqishaY();
+			break;
+		case "zhengyin":
+			bsv.addzhengyinY();
+			break;
+		case "pianyin":
+			bsv.addpianyinY();
+			break;
+
+		default:
+			break;
+		}
+
+		String shiShenR = sDefine.doDefine(rigan + nianzhi);
+
+		switch (shiShenR) {
+		case "bijian":
+			bsv.addbijianR();
+
+			break;
+
+		case "jiecai":
+			bsv.addjiecaiR();
+			break;
+
+		case "shishen":
+			bsv.addshishenR();
+			break;
+
+		case "shangguan":
+			bsv.addshangguanR();
+			break;
+
+		case "zhengcai":
+			bsv.addzhengcaiR();
+			break;
+		case "piancai":
+			bsv.addpiancaiR();
+			break;
+
+		case "zhengguan":
+			bsv.addzhengguanR();
+			break;
+		case "qisha":
+			bsv.addqishaR();
+			break;
+		case "zhengyin":
+			bsv.addzhengyinR();
+			break;
+		case "pianyin":
+			bsv.addpianyinR();
+			break;
+
+		default:
+			break;
+		}
+
+		String shiShenS = sDefine.doDefine(rigan + nianzhi);
+
+		switch (shiShenS) {
+		case "bijian":
+			bsv.addbijianS();
+
+			break;
+
+		case "jiecai":
+			bsv.addjiecaiS();
+			break;
+
+		case "shishen":
+			bsv.addshishenS();
+			break;
+
+		case "shangguan":
+			bsv.addshangguanS();
+			break;
+
+		case "zhengcai":
+			bsv.addzhengcaiS();
+			break;
+		case "piancai":
+			bsv.addpiancaiS();
+			break;
+
+		case "zhengguan":
+			bsv.addzhengguanS();
+			break;
+		case "qisha":
+			bsv.addqishaS();
+			break;
+		case "zhengyin":
+			bsv.addzhengyinS();
+			break;
+		case "pianyin":
+			bsv.addpianyinS();
 			break;
 
 		default:
