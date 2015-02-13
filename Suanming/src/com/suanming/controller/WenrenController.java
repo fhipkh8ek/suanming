@@ -6,10 +6,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-
-
-import com.suanming.utils.bazi.BaziInfo;
 import com.suanming.utils.newBazi.PaiPanClass;
 import com.suanming.utils.wenren.Result;
 
@@ -24,7 +20,6 @@ public class WenrenController {
 		
 		String inDate2 = request.getParameter("inDate2");
 		String inHour2String = request.getParameter("inHour2");
-		
 		String type = request.getParameter("type");
 		
 		if (StringUtils.isBlank(inHour2String)) {
