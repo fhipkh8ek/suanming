@@ -13,6 +13,7 @@ public class Result {
 
 		String shitu = "";
 		String hangye = "";
+		String muban = "";
 
 		Calculate calculate = new Calculate();
 		List<String> list = calculate.getTenGodScore(baziInfo);
@@ -62,21 +63,30 @@ public class Result {
 
 		}
 
-		System.out.println(wushenpaixu[0] + "@" + wushenpaixu[1] + "@"
-				+ wushenpaixu[2]);
+		// System.out.println(wushenpaixu[0] + "@" + wushenpaixu[1] + "@"
+		// + wushenpaixu[2]);
 		shitu = PropertyUtil.getValue(wushenpaixu[0] + "@" + wushenpaixu[1]
 				+ "@" + wushenpaixu[2], "qiancheng.properties");
-		System.out.println(shitu);
+		// System.out.println(shitu);
+
+		muban = PropertyUtil.getValue(wushenpaixu[0] + "@" + wushenpaixu[1]
+				+ "@" + wushenpaixu[2], "zhiye.properties");
 
 		hangye = PropertyUtil.getValue(wuxingDefine(shenxingpaixu[0]) + "@"
 				+ wuxingDefine(shenxingpaixu[1]), "qiancheng.properties");
-		return shitu + "#" + hangye;
+
+		if (shitu.equals("")) {
+
+			return "对不起，暂时没有收录您的命例，您可以发起在线咨询#对不起暂时无法计算您的行业#对不起暂时无法得到您的职业模板";
+		} else {
+			return shitu + "#" + hangye + "#" + muban;
+		}
 	}
 
 	public static void main(String[] args) {
 
 		Result result = new Result();
-		System.out.println(result.duanYu("戊辰己未癸未丁巳"));
+		System.out.println(result.duanYu("丁卯壬寅甲午乙丑"));
 
 	}
 
