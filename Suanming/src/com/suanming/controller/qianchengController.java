@@ -20,8 +20,10 @@ public class qianchengController {
 		baZiInfo = paiPanClass.getBaZiInfo(inDate + " " + inHour);
 		Result result = new Result();
 		String sum = result.duanYu(baZiInfo);
+		String comments = sum.split("#")[0];
 		String template = sum.split("#")[0];
-		String detail = sum.split("#")[1];
+		String detail = sum.split("#")[2];
+		model.addAttribute("comments", comments);
 		model.addAttribute("template", template);
 		model.addAttribute("detail", detail);
 
