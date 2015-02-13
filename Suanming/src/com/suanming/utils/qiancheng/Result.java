@@ -74,12 +74,14 @@ public class Result {
 
 		hangye = PropertyUtil.getValue(wuxingDefine(shenxingpaixu[0]) + "@"
 				+ wuxingDefine(shenxingpaixu[1]), "qiancheng.properties");
-
+      
+		System.out.println(hangye);
+		
 		if (shitu.equals("")) {
 
 			return "对不起，暂时没有收录您的命例，您可以发起在线咨询#对不起暂时无法计算您的行业#对不起暂时无法得到您的职业模板";
 		} else {
-			return shitu + "#" + hangye + "#" + muban;
+			return shitu + "#" + muban + "#" + hangye;
 		}
 	}
 
