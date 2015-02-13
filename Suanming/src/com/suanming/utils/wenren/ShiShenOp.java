@@ -4,8 +4,8 @@ import com.suanming.utils.wenren.vo.BaZiShiShenValue;
 
 public class ShiShenOp {
 
-	public BaZiShiShenValue doReturn(String rigan, String nianzhi,
-			String yuezhi, String rizhi, String shizhi) {
+	public BaZiShiShenValue doReturn(String[] gan, String rigan,
+			String nianzhi, String yuezhi, String rizhi, String shizhi) {
 
 		BaZiShiShenValue bsv = new BaZiShiShenValue();
 		ShiShenDefine sDefine = new ShiShenDefine();
@@ -44,6 +44,30 @@ public class ShiShenOp {
 
 			}
 		}
+
+		/*
+		 * for (int i = 0; i < gan.length; i++) {
+		 * 
+		 * String shiShen = sDefine.doDefine(rigan + tiangan[i]);
+		 * 
+		 * if (shiShen.equals("bijian")) { bsv.addbijianS();
+		 * 
+		 * } else if (shiShen.equals("jiecai")) { bsv.addjiecaiS();
+		 * 
+		 * } else if (shiShen.equals("zhengcai")) { bsv.addzhengcaiS();
+		 * 
+		 * } else if (shiShen.equals("piancai")) { bsv.addpiancaiS();
+		 * 
+		 * } else if (shiShen.equals("zhengguan")) { bsv.addzhengguanS();
+		 * 
+		 * } else if (shiShen.equals("qisha")) { bsv.addqishaS();
+		 * 
+		 * } else if (shiShen.equals("zhengyin")) { bsv.addzhengyinS();
+		 * 
+		 * } else if (shiShen.equals("pianyin")) { bsv.addpianyinS();
+		 * 
+		 * } }
+		 */
 
 		String shiShenN = sDefine.doDefine(rigan + nianzhi);
 
